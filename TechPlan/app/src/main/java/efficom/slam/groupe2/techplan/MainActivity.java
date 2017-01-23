@@ -27,7 +27,8 @@ public class MainActivity extends AppCompatActivity {
 
     private void getData(){
         tv_result = (TextView) findViewById(R.id.tv_result);
-        String url = "https://raw.githubusercontent.com/artandor/TPs-Android/master/tpAmine1901/etudiants.json";
+        //String url = "https://raw.githubusercontent.com/artandor/TPs-Android/master/tpAmine1901/etudiants.json";
+        String url = "https://apirestppe4-artandor.c9users.io/index.php/get_all_latlong";
 
         JsonObjectRequest jsObjRequest = new JsonObjectRequest
                 (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
