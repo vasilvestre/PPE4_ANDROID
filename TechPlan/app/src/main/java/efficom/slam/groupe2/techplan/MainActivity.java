@@ -27,9 +27,9 @@ import java.util.Map;
 
 public class MainActivity extends AppCompatActivity {
 
-    private static EditText usernameEt;
-    private static EditText passwordEt;
-    private static Button login_btn;
+    private  EditText usernameEt;
+    private  EditText passwordEt;
+    private  Button login_btn;
     private RequestQueue requestQueue;
     private static final String URL = "http://api.vsilvestre.fr/login_check";
     private StringRequest request;
@@ -83,46 +83,9 @@ public class MainActivity extends AppCompatActivity {
                 requestQueue.add(request);
             }
         });
-        //LoginButton();
 
 
     }
-
-//    public void Onlogin(View view) {
-//        usernameEt = (EditText)findViewById(R.id.edittext_username);
-//        passwordEt = (EditText)findViewById(R.id.edittext_password);
-//        String username = usernameEt.getText().toString();
-//        String password = passwordEt.getText().toString();
-//        String type ="Login";
-//        BackgroundWorker backgroundWorker = new BackgroundWorker(this);
-//        backgroundWorker.execute(type,username,password);
-//
-//    }
-//    public void LoginButton() {
-//        username = (EditText) findViewById(R.id.edittext_username);
-//        password = (EditText) findViewById(R.id.edittext_password);
-//        login_btn = (Button) findViewById(R.id.button_login);
-//
-//        login_btn.setOnClickListener(
-//                new View.OnClickListener() {
-//                    @Override
-//                    public void onClick(View v) {
-//                        if (username.getText().toString().equals("user") &&
-//                                (password.getText().toString().equals("pass"))){
-//                            Toast.makeText(MainActivity.this,"User and Password is correct",Toast.LENGTH_SHORT).show();
-//                            Intent intent = new Intent("efficom.slam.groupe2.techplan.ListIntervention");
-//                            startActivity(intent);
-//                        }else{ Toast.makeText(MainActivity.this,"User and Password not correct",Toast.LENGTH_SHORT).show();
-//                            attempt_counter--;
-//                            if(attempt_counter==0){
-//                                login_btn.setEnabled(false);
-//                                Toast.makeText(MainActivity.this,"you failed this app with your non-sense!!",Toast.LENGTH_SHORT).show();
-//                            }
-//                        }
-//                    }
-//                }
-//        );
-//    }
 
 
 }
