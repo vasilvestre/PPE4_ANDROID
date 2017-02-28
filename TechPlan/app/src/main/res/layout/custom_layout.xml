@@ -1,0 +1,69 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    android:orientation="vertical"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/list_row_select">
+    <com.android.volley.toolbox.NetworkImageView
+        android:id="@+id/image_view"
+        android:layout_width="80dp"
+        android:layout_height="80dp"
+        android:layout_alignParentLeft="true"
+        android:layout_margin="8dp"
+        />
+    <!---Intervention ID -->
+    <TextView
+        android:id="@+id/intervention_id"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_alignTop="@+id/image_view"
+        android:layout_toRightOf="@+id/image_view"
+        android:text="string/testId"
+        android:textSize="17dp"
+        />
+    <!---Intervention entreprise -->
+    <TextView
+        android:id="@+id/intervention_entreprise"
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intervention_id"
+        android:layout_marginTop="1dp"
+        android:layout_toRightOf="@+id/image_view"
+        android:text="string/testEntreprise"
+        android:textSize="15dp"
+        />
+    <!---Intervention duration -->
+    <TextView
+        android:id="@+id/intervention_duration"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intervention_entreprise"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/image_view"
+        android:text="string/testDuration"
+        android:textSize="13dp"
+    />
+    <!---Intervention city -->
+    <TextView
+        android:id="@+id/intervention_city"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/intervention_duration"
+        android:layout_marginTop="5dp"
+        android:layout_toRightOf="@+id/image_view"
+        android:text="string/testCity"
+        android:textSize="13dp"
+        />
+    <!---Intervention start -->
+    <TextView
+        android:id="@+id/intervention_start"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_toRightOf="@+id/image_view"
+        android:layout_below="@+id/intervention_city"
+        android:layout_marginTop="5dp"
+        android:text="string/testStart"
+        android:textSize="12dp"
+        />
+
+</RelativeLayout>

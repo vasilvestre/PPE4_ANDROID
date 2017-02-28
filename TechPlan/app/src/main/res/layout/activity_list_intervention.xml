@@ -11,9 +11,11 @@
     tools:context="efficom.slam.groupe2.techplan.ListIntervention">
 
     <ListView
+        android:id="@+id/listIntervention"
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        android:layout_centerHorizontal="true"
-        android:layout_alignParentTop="true"
-        android:id="@+id/listIntervention" />
+        android:dividerHeight="5dp"
+        android:listSelector="@drawable/list_row_select">
+    </ListView>
+
 </RelativeLayout>
