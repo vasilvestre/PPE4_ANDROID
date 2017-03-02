@@ -9,11 +9,17 @@
     <uses-feature android:name="android.hardware.location.gps" />
 
     <application
+        android:name=".Singelton.AppController"
         android:allowBackup="true"
         android:icon="@drawable/techplan"
         android:label="@string/app_name"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
+        <service
+            android:name=".PositionService"
+            android:enabled="true"
+            android:exported="true" />
+
         <activity android:name=".MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -21,7 +27,14 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
+        <activity android:name=".ListIntervention">
+            <intent-filter>
+                <action android:name="efficom.slam.groupe2.techplan.ListIntervention" />
 
+                <category android:name="android.intent.category.DEFAULT" />
+            </intent-filter>
+        </activity>
+        <activity android:name=".InterventionDetails"></activity>
         <service
             android:name=".PositionService"
             android:enabled="true"
