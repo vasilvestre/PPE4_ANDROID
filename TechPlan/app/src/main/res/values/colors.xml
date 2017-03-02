@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="utf-8"?>
 <resources>
-    <color name="colorPrimary">#3F51B5</color>
-    <color name="colorPrimaryDark">#303F9F</color>
-    <color name="colorAccent">#FF4081</color>
-    <color name="click_start_color">#3F51B5</color>
+    <color name="colorPrimary">#46C3FF</color>
+    <color name="colorPrimaryDark">#3492BF</color>
+    <color name="colorAccent">#113140</color>
+    <color name="click_start_color">#3FAFE5</color>
     <color name="click_end_color">#303F9F</color>
-    <color name="click_end_color_bg">#FF4081</color>
-    <color name="click_start_color_bg">#4CAF50</color>
+    <color name="click_end_color_bg">#23617F</color>
+    <color name="click_start_color_bg">#3FAFE5</color>
 </resources>
