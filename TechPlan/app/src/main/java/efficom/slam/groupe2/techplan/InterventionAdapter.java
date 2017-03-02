@@ -72,7 +72,7 @@ public class InterventionAdapter extends BaseAdapter {
 
             Intervention intervention = interventions.get(position);
 
-            Log.d("debug", "Test view creation");
+            //Log.d("debug", "Test view creation");
 
             id.setText(intervention.getId_intervention());
             entreprise.setText(intervention.getEntreprise());

@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_main);
-        startService(new Intent(this, PositionService.class));
+        //startService(new Intent(this, PositionService.class));
         usernameEt = (EditText)findViewById(R.id.edittext_username);
         passwordEt = (EditText)findViewById(R.id.edittext_password);
         login_btn = (Button)findViewById(R.id.button_login);
@@ -83,36 +83,5 @@ public class MainActivity extends AppCompatActivity {
                 requestQueue.add(request);
             }
         });
-
-
     }
-
-
 }
-
-//        getData();
-//    }
-//
-//    private void getData(){
-//        lv_intervention = (ListView) findViewById(R.id.lv_intervention);
-//        //String url = "https://raw.githubusercontent.com/artandor/TPs-Android/master/tpAmine1901/etudiants.json";
-//        String url = "https://apirestppe4-artandor.c9users.io/index.php/get_all_latlong";
-//
-//        JsonObjectRequest jsObjRequest = new JsonObjectRequest
-//                (Request.Method.GET, url, null, new Response.Listener<JSONObject>() {
-//
-//                    @Override
-//                    public void onResponse(JSONObject response) {
-//                       // lv_intervention.setAdapter();
-//                    }
-//                }, new Response.ErrorListener() {
-//
-//                    @Override
-//                    public void onErrorResponse(VolleyError error) {
-//                        // TODO Auto-generated method stub
-//
-//                    }
-//                });
-//        Volley.newRequestQueue(this).add(jsObjRequest);
-//    }
-//}
