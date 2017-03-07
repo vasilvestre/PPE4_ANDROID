@@ -1,12 +1,14 @@
 package efficom.slam.groupe2.techplan;
 
 import android.app.ProgressDialog;
+import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ArrayAdapter;
+import android.widget.Button;
 import android.widget.ListView;
 import android.widget.Toast;
 
@@ -30,12 +32,13 @@ import java.util.Map;
 import efficom.slam.groupe2.techplan.Models.Intervention;
 
 public class ListIntervention extends AppCompatActivity {
-
+    JSONArray listInterventionJson = null;
     private ListView listInterventionView;
     private List<Intervention> listIntervention = new ArrayList<Intervention>();
     private InterventionAdapter interventionAdapter;
-    private ProgressDialog dialog;
 
+    private ProgressDialog dialog;
+    private Button detailsButton;
     private RequestQueue requestQueue;
     private static final String URL = "http://api.vsilvestre.fr/interventions";
     private StringRequest request;
@@ -52,10 +55,13 @@ public class ListIntervention extends AppCompatActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
+
         setContentView(R.layout.activity_list_intervention);
         listInterventionView = (ListView) findViewById(R.id.listIntervention);
         interventionAdapter = new InterventionAdapter(this,listIntervention);
         listInterventionView.setAdapter(interventionAdapter);
+
 
         dialog= new ProgressDialog(this);
         dialog.setMessage("Loading...");
@@ -67,9 +73,10 @@ public class ListIntervention extends AppCompatActivity {
             @Override
             public void onResponse(String response)
             {
+
                 try {
                     JSONObject reponseJson = new JSONObject(response);
-                    JSONArray listInterventionJson = reponseJson.getJSONArray("interventions");
+                    listInterventionJson = reponseJson.getJSONArray("interventions");
                     for(Integer i =0 ; i<listInterventionJson.length();i++) {
                         JSONObject interventionJson = listInterventionJson.getJSONObject(i);
                         Intervention itemIntervention = new Intervention();
@@ -83,6 +90,8 @@ public class ListIntervention extends AppCompatActivity {
                         itemIntervention.setImage(interventionJson.getString("picture"));
 
                         listIntervention.add(itemIntervention);
+
+
                         //Log.d("Intervention",intervention.getString("entreprise"));
                     }
 
@@ -90,6 +99,24 @@ public class ListIntervention extends AppCompatActivity {
                     interventionAdapter.notifyDataSetInvalidated();
 
                     hideDialog();
+
+                    listInterventionView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
+                        @Override
+                        public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                            try {
+                                Intent intent = new Intent(getApplicationContext(),InterventionDetails.class);
+                                JSONObject interventionJson = listInterventionJson.getJSONObject(position);
+                                intent.putExtra("id_intervention",interventionJson.getString("id_intervention"));
+                                intent.putExtra("entreprise",interventionJson.getString("entreprise"));
+                                intent.putExtra("city",interventionJson.getString("city"));
+                                intent.putExtra("intervention_duration",interventionJson.getString("intervention_duration"));
+                                intent.putExtra("intervention_start",interventionJson.getString("intervention_start"));
+                                startActivity(intent);
+                            } catch (JSONException e) {
+                                e.printStackTrace();
+                            }
+                        }
+                    });
 
 
                 } catch (JSONException e) {

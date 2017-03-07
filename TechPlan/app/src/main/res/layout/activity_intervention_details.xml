@@ -31,15 +31,6 @@
         android:layout_marginBottom="182dp" />
 
     <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/intervention_duration"
-        android:layout_alignRight="@+id/intervention_start"
-        android:layout_alignEnd="@+id/intervention_start"
-        android:id="@+id/textView11" />
-
-    <TextView
         android:text="city"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"

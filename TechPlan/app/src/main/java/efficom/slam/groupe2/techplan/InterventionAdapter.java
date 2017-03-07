@@ -6,6 +6,7 @@ import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -72,7 +73,7 @@ public class InterventionAdapter extends BaseAdapter {
 
             Intervention intervention = interventions.get(position);
 
-            Log.d("debug", "Test view creation");
+           // Log.d("debug", "Test view creation");
 
             id.setText(intervention.getId_intervention());
             entreprise.setText(intervention.getEntreprise());
@@ -85,4 +86,6 @@ public class InterventionAdapter extends BaseAdapter {
 
         return convertView;
     }
+
+
 }
