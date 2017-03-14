@@ -1,5 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:id="@+id/activity_intervention_details"
     android:layout_width="match_parent"
@@ -29,15 +30,6 @@
         android:layout_alignLeft="@+id/intervention_id"
         android:layout_alignStart="@+id/intervention_id"
         android:layout_marginBottom="182dp" />
-
-    <TextView
-        android:text="TextView"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_alignTop="@+id/intervention_duration"
-        android:layout_alignRight="@+id/intervention_start"
-        android:layout_alignEnd="@+id/intervention_start"
-        android:id="@+id/textView11" />
 
     <TextView
         android:text="city"
@@ -71,5 +63,14 @@
         android:layout_above="@+id/intervention_start"
         android:layout_alignParentLeft="true"
         android:layout_alignParentStart="true" />
+
+    <ImageView
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        app:srcCompat="@mipmap/ic_launcher"
+        android:layout_alignParentTop="true"
+        android:layout_centerHorizontal="true"
+        android:layout_marginTop="62dp"
+        android:id="@+id/imageView6" />
 
 </RelativeLayout>
