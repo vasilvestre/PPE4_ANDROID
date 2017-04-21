@@ -1,6 +1,6 @@
 <snippet>
   <content><![CDATA[
-# TechPlan
+# ${1:TechPlan}
 
 TODO: Write a project description
 
