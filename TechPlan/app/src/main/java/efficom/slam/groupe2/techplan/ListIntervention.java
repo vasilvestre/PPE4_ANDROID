@@ -2,6 +2,10 @@ package efficom.slam.groupe2.techplan;
 
 import android.app.ProgressDialog;
 import android.content.Intent;
+import android.icu.text.DateFormat;
+import android.icu.text.SimpleDateFormat;
+import android.os.Build;
+import android.support.annotation.RequiresApi;
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
 import android.util.Log;
@@ -25,6 +29,7 @@ import org.json.JSONException;
 import org.json.JSONObject;
 
 
+import java.sql.Date;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Map;
@@ -51,6 +56,18 @@ public class ListIntervention extends AppCompatActivity {
             dialog = null;
         }
     }
+    @RequiresApi(api = Build.VERSION_CODES.N)
+    private String getDate(long timeStamp){
+
+        try{
+            DateFormat sdf = new SimpleDateFormat("MM/dd/yyyy");
+            Date netDate = (new Date(timeStamp));
+            return sdf.format(netDate);
+        }
+        catch(Exception ex){
+            return "xx";
+        }
+    }
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -68,6 +85,7 @@ public class ListIntervention extends AppCompatActivity {
         dialog.show();
 
         requestQueue = Volley.newRequestQueue(this);
+
 
         request = new StringRequest(Request.Method.GET, URL, new Response.Listener<String>() {
             @Override
@@ -88,6 +106,8 @@ public class ListIntervention extends AppCompatActivity {
                         itemIntervention.setIntervention_duration(interventionJson.getString("intervention_duration"));
                         itemIntervention.setIntervention_start(interventionJson.getString("intervention_start"));
                         itemIntervention.setImage(interventionJson.getString("picture"));
+                        itemIntervention.setaddress(interventionJson.getString("address"));
+
 
                         listIntervention.add(itemIntervention);
 
@@ -111,6 +131,8 @@ public class ListIntervention extends AppCompatActivity {
                                 intent.putExtra("city",interventionJson.getString("city"));
                                 intent.putExtra("intervention_duration",interventionJson.getString("intervention_duration"));
                                 intent.putExtra("intervention_start",interventionJson.getString("intervention_start"));
+                                intent.putExtra("address",interventionJson.getString("address"));
+
                                 startActivity(intent);
                             } catch (JSONException e) {
                                 e.printStackTrace();
@@ -134,6 +156,7 @@ public class ListIntervention extends AppCompatActivity {
         requestQueue.add(request);
 
     }
+
 
 
 

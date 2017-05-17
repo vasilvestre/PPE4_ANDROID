@@ -2,11 +2,9 @@ package efficom.slam.groupe2.techplan;
 
 import android.app.Activity;
 import android.content.Context;
-import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
-import android.widget.Adapter;
 import android.widget.BaseAdapter;
 import android.widget.TextView;
 
@@ -69,7 +67,7 @@ public class InterventionAdapter extends BaseAdapter {
             TextView entreprise = (TextView) convertView.findViewById(R.id.intervention_entreprise);
             TextView duration = (TextView) convertView.findViewById(R.id.intervention_duration);
             TextView city = (TextView) convertView.findViewById(R.id.intervention_city);
-            TextView start = (TextView) convertView.findViewById(R.id.intervention_start);
+            TextView start = (TextView) convertView.findViewById(R.id.address);
 
             Intervention intervention = interventions.get(position);
 

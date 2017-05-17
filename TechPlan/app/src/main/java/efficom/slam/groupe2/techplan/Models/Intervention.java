@@ -6,7 +6,7 @@ package efficom.slam.groupe2.techplan.Models;
 
 public class Intervention {
 
-    private String entreprise,id_intervention,intervention_duration,intervention_start,city,image;
+    private String entreprise,id_intervention,intervention_duration,intervention_start,city,image,address;
 
     //setter
     public void setEntreprise(String entreprise) {
@@ -56,5 +56,9 @@ public class Intervention {
 
     public String getImage() {
         return image;
+    }
+
+    public void setaddress(String address) {
+        this.address = address;
     }
 }

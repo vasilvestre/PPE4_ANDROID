@@ -40,7 +40,7 @@
     <!---Intervention start -->
 
     <TextView
-        android:id="@+id/intervention_start"
+        android:id="@+id/address"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="string/testStart"
